@@ -125,7 +125,7 @@ export default class BasicDropdownTrigger extends Component<Args> {
 
   // Methods
   _stopTextSelectionUntilMouseup(): void {
-    document.addEventListener('mouseup', this._mouseupHandler, true);
+    document.addEventListener('mouseup', this._mouseupHandler, {capture:true, passive:true});
     document.body.classList.add('ember-basic-dropdown-text-select-disabled');
   }
 }
